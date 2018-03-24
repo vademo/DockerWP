@@ -1,0 +1,42 @@
+version: '2'
+services:
+  apache:
+    build:
+      context: ./
+    volumes:
+      - app-sync:/var/www/html:nocopy
+    ports:
+      - 80:80
+    networks:
+      - wordpress-network
+  db:
+    image: mysql
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
+    networks:
+      - wordpress-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+      driver: bridge
+volumes:
+  app-sync:
+    external: true
