@@ -1,5 +1,7 @@
-version: '2'
+version: 2
 syncs:
   app-sync:
-    src: './project'
-    monit_enable: true
+    src: './project/'
+    sync_strategy: 'rsync'
+    sync_args: '-v'
+    sync_host_port: 10871
