@@ -2,6 +2,6 @@ version: 2
 syncs:
   app-sync:
     src: './project/'
-    sync_strategy: 'rsync'
-    sync_args: '-v'
-    sync_host_port: 10871
+    # sync_strategy: 'rsync'
+    # sync_args: '-v'
+    # sync_host_port: 10871
