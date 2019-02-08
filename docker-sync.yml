@@ -1,6 +1,6 @@
 version: 2
 syncs:
-  $volumename:
+  VOLUMENAME:
     src: './project/'
     # sync_strategy: 'rsync'
     # sync_args: '-v'
