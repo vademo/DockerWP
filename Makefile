@@ -19,10 +19,11 @@ stop:
 	docker-sync stop
 generate:
 	@read -p "Enter voluem Name:" module; \
-	replace=s/VOLUMENAME/$$module/g; \
+	replace=s/nwa/$$module/g; \
 	sed -i -e $$replace ./docker-compose.yml; \
 	sed -i -e $$replace ./docker-sync.yml; \
 	sed -i -e $$replace ./Makefile; \
 	rm ./docker-compose.yml-e; \
 	rm ./docker-sync.yml-e; \
+	rm ./Makefile-e; \
 
