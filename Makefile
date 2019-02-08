@@ -17,3 +17,8 @@ start:
 stop:
 	docker-compose down
 	docker-sync stop
+generate:
+	@read -p "Enter Module Name:" module; \
+	sed -i -e 's/$volumename/$$module/g' ./docker-comose.yml
+	sed -i -e 's/$volumename/$$module/g' ./docker-sync.yml
+

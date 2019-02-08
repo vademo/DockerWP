@@ -1,8 +1,15 @@
+# modules
 node_modules/*
-project/
+
+# Project
 project/*
 !project/.gitkeep
+
+# db
+db/*
+!db/.gitkeep
+
+
 .DS_Store
 yarn.lock
 .docker-sync/*
-db/*
