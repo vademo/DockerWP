@@ -11,9 +11,10 @@ ___
 
 ## Setup
 1. Copy your instalation into the project folder
-2. run `make start`. This will create/start the docker-sync volume, start apache , start
+2. run `make generate`. This will set the volumename for docker-sync
+3. run `make start`. This will create/start the docker-sync volume, start apache , start
 mysql, start phpmyadmin )
-3. you should now be able to surf to localhost and see a wordpress app and go to
+4. you should now be able to surf to localhost and see a wordpress app and go to
 localhost:8080  to access the phpmyadmin interface mysql is also exposed on the
 default 3306 port if you prefer an other system for import/export db
 your database will be persisted in the db folder ( by default docker doesn't
