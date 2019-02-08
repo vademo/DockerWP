@@ -11,8 +11,8 @@ kill:
 
 start:
 	docker-sync clean
-	docker volume create --name=app-sync
-	docker-compose -f docker-compose.yaml up -d
+	docker volume create --name=VOLUMENAME
+	docker-compose -f docker-compose.yml up -d
 	docker-sync start
 stop:
 	docker-compose down
@@ -22,6 +22,7 @@ generate:
 	replace=s/VOLUMENAME/$$module/g; \
 	sed -i -e $$replace ./docker-compose.yml; \
 	sed -i -e $$replace ./docker-sync.yml; \
+	sed -i -e $$replace ./Makefile; \
 	rm ./docker-compose.yml-e; \
 	rm ./docker-sync.yml-e; \
 
