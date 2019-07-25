@@ -5,7 +5,7 @@ services:
     build:
       context: ./
     volumes:
-      -  app-sync:/var/www/html:nocopy
+      -  VOLUMENAME:/var/www/html:nocopy
     ports:
       - 80:80
     networks:
@@ -39,5 +39,5 @@ networks:
   wordpress-network:
       driver: bridge
 volumes:
-  app-sync:
+  VOLUMENAME:
     external: true
