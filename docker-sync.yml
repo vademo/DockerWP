@@ -1,9 +1,7 @@
-version: 2
+version: '2'
 syncs:
   VOLUMENAME:
-    src: './project/'
+    src: './project'
+    monit_enable: true
     sync_userid: '33'
     sync_groupid: '82'
-    # sync_strategy: 'unison'
-    # sync_args: '-v'
-    # sync_host_port: 10871

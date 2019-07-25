@@ -12,18 +12,9 @@ kill:
 start:
 	docker-sync clean
 	docker volume create --name=VOLUMENAME
-	docker-compose -f docker-compose.yml up -d
+	docker-compose -f docker-compose.yaml up -d
 	docker-sync start
+	yarn watch
 stop:
 	docker-compose down
 	docker-sync stop
-generate:
-	@read -p "Enter voluem Name:" module; \
-	replace=s/VOLUMENAME/$$module/g; \
-	sed -i -e $$replace ./docker-compose.yml; \
-	sed -i -e $$replace ./docker-sync.yml; \
-	sed -i -e $$replace ./Makefile; \
-	rm ./docker-compose.yml-e; \
-	rm ./docker-sync.yml-e; \
-	rm ./Makefile-e; \
-
