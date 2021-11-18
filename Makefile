@@ -5,7 +5,7 @@ kill:
 
 	@echo "\033[1;32mstart\033[m			start development(starts docker, docker-sync & webpack )"
 	@echo "\033[1;32mstop\033[m			Stop docker and sync"
-	@echo "\033[1;32minstall\033[m			install"
+	@echo "\033[1;32mgenerate\033[m			generate"
 	@echo "\033[1;33mby: Olivier Van den Mooter \033[m"
 	@echo "\033[1;32m \033[m"
 
