@@ -1,0 +1,14 @@
+version: '3'
+services:
+  apache:
+    build:
+      context: Dockerfile2
+    volumes:
+      - ./project/wp-content/plugins/vademoImporter:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+      driver: bridge
